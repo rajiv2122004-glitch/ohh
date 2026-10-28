@@ -209,17 +209,44 @@ export const PhotoIntegrityModal: React.FC<PhotoIntegrityModalProps> = ({
             </div>
           </div>
 
+          {/* GitHub Deployment Quick Commands */}
+          <div className="p-4 rounded-xl bg-zinc-950 border border-zinc-800 space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono uppercase tracking-wider text-zinc-300">
+                GitHub Repository Push Commands
+              </span>
+              <span className="text-[11px] font-mono text-emerald-400">Git Initialized on main</span>
+            </div>
+            <p className="text-xs text-zinc-400">
+              Run these commands to link your local or remote GitHub repo:
+            </p>
+            <pre className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-200 overflow-x-auto select-all">
+{`git remote add origin https://github.com/<your-username>/<repo-name>.git
+git push -u origin main`}
+            </pre>
+          </div>
+
         </div>
 
         {/* Footer Actions */}
-        <div className="flex items-center justify-between pt-4 border-t border-zinc-800">
-          <button
-            onClick={handleDownload}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-medium transition-colors cursor-pointer"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Download Asset (/assets/original-photo.jpg)</span>
-          </button>
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-zinc-800">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleDownload}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-medium transition-colors cursor-pointer"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download Image</span>
+            </button>
+            <a
+              href="/portfolio-source.tar.gz"
+              download="rajiv-portfolio.tar.gz"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-medium transition-colors cursor-pointer"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download Full Repo (.tar.gz)</span>
+            </a>
+          </div>
           
           <button
             onClick={onClose}

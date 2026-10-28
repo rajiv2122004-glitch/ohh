@@ -9,8 +9,9 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { PhotoIntegrityModal } from './components/PhotoIntegrityModal';
+import defaultPhoto from './assets/original-photo.jpg';
 
-const DEFAULT_PHOTO = '/assets/original-photo.jpg';
+const DEFAULT_PHOTO = defaultPhoto;
 
 export default function App() {
   const [photoSrc, setPhotoSrc] = useState<string>(DEFAULT_PHOTO);
